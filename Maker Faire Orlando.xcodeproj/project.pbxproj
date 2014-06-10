@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		110345B31945759200F5C99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345B21945759200F5C99F /* AppDelegate.swift */; };
-		110345B51945759200F5C99F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345B41945759200F5C99F /* FirstViewController.swift */; };
-		110345B71945759200F5C99F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345B61945759200F5C99F /* SecondViewController.swift */; };
+		110345B51945759200F5C99F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345B41945759200F5C99F /* MapViewController.swift */; };
+		110345B71945759200F5C99F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345B61945759200F5C99F /* EventViewController.swift */; };
 		110345BA1945759200F5C99F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110345B81945759200F5C99F /* Main.storyboard */; };
 		110345BC1945759200F5C99F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110345BB1945759200F5C99F /* Images.xcassets */; };
 		110345C81945759200F5C99F /* Orlando_Maker_FaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345C71945759200F5C99F /* Orlando_Maker_FaireTests.swift */; };
+		113C561F1946A4AC00CAFC27 /* MakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C561E1946A4AC00CAFC27 /* MakerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +27,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		110345AD1945759200F5C99F /* Orlando Maker Faire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orlando Maker Faire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110345AD1945759200F5C99F /* Maker Faire Orlando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maker Faire Orlando.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		110345B11945759200F5C99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110345B21945759200F5C99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		110345B41945759200F5C99F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		110345B61945759200F5C99F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		110345B41945759200F5C99F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		110345B61945759200F5C99F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		110345B91945759200F5C99F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		110345BB1945759200F5C99F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		110345C11945759200F5C99F /* Orlando Maker FaireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orlando Maker FaireTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110345C11945759200F5C99F /* Maker Faire OrlandoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Maker Faire OrlandoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		110345C61945759200F5C99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110345C71945759200F5C99F /* Orlando_Maker_FaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orlando_Maker_FaireTests.swift; sourceTree = "<group>"; };
+		113C561E1946A4AC00CAFC27 /* MakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 		110345A41945759200F5C99F = {
 			isa = PBXGroup;
 			children = (
-				110345AF1945759200F5C99F /* Orlando Maker Faire */,
+				110345AF1945759200F5C99F /* Maker Faire Orlando */,
 				110345C41945759200F5C99F /* Orlando Maker FaireTests */,
 				110345AE1945759200F5C99F /* Products */,
 			);
@@ -68,22 +70,24 @@
 		110345AE1945759200F5C99F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				110345AD1945759200F5C99F /* Orlando Maker Faire.app */,
-				110345C11945759200F5C99F /* Orlando Maker FaireTests.xctest */,
+				110345AD1945759200F5C99F /* Maker Faire Orlando.app */,
+				110345C11945759200F5C99F /* Maker Faire OrlandoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		110345AF1945759200F5C99F /* Orlando Maker Faire */ = {
+		110345AF1945759200F5C99F /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
 				110345B21945759200F5C99F /* AppDelegate.swift */,
-				110345B41945759200F5C99F /* FirstViewController.swift */,
-				110345B61945759200F5C99F /* SecondViewController.swift */,
+				110345B41945759200F5C99F /* MapViewController.swift */,
+				110345B61945759200F5C99F /* EventViewController.swift */,
+				113C561E1946A4AC00CAFC27 /* MakerViewController.swift */,
 				110345B81945759200F5C99F /* Main.storyboard */,
 				110345BB1945759200F5C99F /* Images.xcassets */,
 				110345B01945759200F5C99F /* Supporting Files */,
 			);
+			name = "Maker Faire Orlando";
 			path = "Orlando Maker Faire";
 			sourceTree = "<group>";
 		};
@@ -115,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		110345AC1945759200F5C99F /* Orlando Maker Faire */ = {
+		110345AC1945759200F5C99F /* Maker Faire Orlando */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 110345CB1945759200F5C99F /* Build configuration list for PBXNativeTarget "Orlando Maker Faire" */;
+			buildConfigurationList = 110345CB1945759200F5C99F /* Build configuration list for PBXNativeTarget "Maker Faire Orlando" */;
 			buildPhases = (
 				110345A91945759200F5C99F /* Sources */,
 				110345AA1945759200F5C99F /* Frameworks */,
@@ -127,14 +131,14 @@
 			);
 			dependencies = (
 			);
-			name = "Orlando Maker Faire";
+			name = "Maker Faire Orlando";
 			productName = "Orlando Maker Faire";
-			productReference = 110345AD1945759200F5C99F /* Orlando Maker Faire.app */;
+			productReference = 110345AD1945759200F5C99F /* Maker Faire Orlando.app */;
 			productType = "com.apple.product-type.application";
 		};
-		110345C01945759200F5C99F /* Orlando Maker FaireTests */ = {
+		110345C01945759200F5C99F /* Maker Faire OrlandoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 110345CE1945759200F5C99F /* Build configuration list for PBXNativeTarget "Orlando Maker FaireTests" */;
+			buildConfigurationList = 110345CE1945759200F5C99F /* Build configuration list for PBXNativeTarget "Maker Faire OrlandoTests" */;
 			buildPhases = (
 				110345BD1945759200F5C99F /* Sources */,
 				110345BE1945759200F5C99F /* Frameworks */,
@@ -145,9 +149,9 @@
 			dependencies = (
 				110345C31945759200F5C99F /* PBXTargetDependency */,
 			);
-			name = "Orlando Maker FaireTests";
+			name = "Maker Faire OrlandoTests";
 			productName = "Orlando Maker FaireTests";
-			productReference = 110345C11945759200F5C99F /* Orlando Maker FaireTests.xctest */;
+			productReference = 110345C11945759200F5C99F /* Maker Faire OrlandoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 110345A81945759200F5C99F /* Build configuration list for PBXProject "Orlando Maker Faire" */;
+			buildConfigurationList = 110345A81945759200F5C99F /* Build configuration list for PBXProject "Maker Faire Orlando" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +185,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				110345AC1945759200F5C99F /* Orlando Maker Faire */,
-				110345C01945759200F5C99F /* Orlando Maker FaireTests */,
+				110345AC1945759200F5C99F /* Maker Faire Orlando */,
+				110345C01945759200F5C99F /* Maker Faire OrlandoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,9 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				110345B71945759200F5C99F /* SecondViewController.swift in Sources */,
+				110345B71945759200F5C99F /* EventViewController.swift in Sources */,
 				110345B31945759200F5C99F /* AppDelegate.swift in Sources */,
-				110345B51945759200F5C99F /* FirstViewController.swift in Sources */,
+				110345B51945759200F5C99F /* MapViewController.swift in Sources */,
+				113C561F1946A4AC00CAFC27 /* MakerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		110345C31945759200F5C99F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 110345AC1945759200F5C99F /* Orlando Maker Faire */;
+			target = 110345AC1945759200F5C99F /* Maker Faire Orlando */;
 			targetProxy = 110345C21945759200F5C99F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -333,7 +338,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Orlando Maker Faire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maker Faire Orlando";
 			};
 			name = Debug;
 		};
@@ -344,7 +349,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Orlando Maker Faire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maker Faire Orlando";
 			};
 			name = Release;
 		};
@@ -363,7 +368,7 @@
 				INFOPLIST_FILE = "Orlando Maker FaireTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maker Faire OrlandoTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -379,7 +384,7 @@
 				INFOPLIST_FILE = "Orlando Maker FaireTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maker Faire OrlandoTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -387,7 +392,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		110345A81945759200F5C99F /* Build configuration list for PBXProject "Orlando Maker Faire" */ = {
+		110345A81945759200F5C99F /* Build configuration list for PBXProject "Maker Faire Orlando" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				110345C91945759200F5C99F /* Debug */,
@@ -396,21 +401,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		110345CB1945759200F5C99F /* Build configuration list for PBXNativeTarget "Orlando Maker Faire" */ = {
+		110345CB1945759200F5C99F /* Build configuration list for PBXNativeTarget "Maker Faire Orlando" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				110345CC1945759200F5C99F /* Debug */,
 				110345CD1945759200F5C99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		110345CE1945759200F5C99F /* Build configuration list for PBXNativeTarget "Orlando Maker FaireTests" */ = {
+		110345CE1945759200F5C99F /* Build configuration list for PBXNativeTarget "Maker Faire OrlandoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				110345CF1945759200F5C99F /* Debug */,
 				110345D01945759200F5C99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
