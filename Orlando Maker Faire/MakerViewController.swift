@@ -15,6 +15,8 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     var makerData: NSMutableData = NSMutableData()
     var tableData: NSArray = NSArray()
     
+    var makers: Maker[] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,29 +37,37 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MakerCell")
         
         var rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        
+        println(rowData)
     
         cell.text = rowData["project_name"] as String
         cell.detailTextLabel.text = rowData["organization"] as String
         
-        /* images when json is properly formed
-        var urlString: NSString = rowData["photo_link"] as NSString
-        var imgURL: NSURL = NSURL(string: urlString)
+        // Should format these to fit
+        /*
+        if rowData["photo_link"] != nil {
+            var urlString: NSString = rowData["photo_link"] as NSString
+            var imgURL: NSURL = NSURL(string: urlString)
         
-        // Download an NSData representation of the image at the URL
-        var imgData: NSData = NSData(contentsOfURL: imgURL)
-        cell.image = UIImage(data: imgData)
+            // Download an NSData representation of the image at the URL
+            var imgData: NSData = NSData(contentsOfURL: imgURL)
+            cell.image = UIImage(data: imgData)
+        }
         */
+
         
         return cell
     }
     
     func getMakers() {
-        var urlPath = "http://callformakers.org/orlando2014/default/overview.json/raw"
+        var urlPath = "http://callformakers.org/orlando2014/default/overviewALL.json/raw"
         var url : NSURL = NSURL(string: urlPath)
         var request :NSURLRequest =  NSURLRequest(URL: url)
         var connection : NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)
     }
     
+    
+    // Connection delegate methods
     func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
         self.makerData = NSMutableData() // for now, need to move to core data
     }
@@ -76,6 +86,30 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.tableData = results
             self.makerTableView.reloadData()
         }
+
+        
+        let allResults: NSDictionary[] = jsonResult["accepteds"] as NSDictionary[]
+
+        /*
+        for result:NSDictionary in allResults {
+            
+            var category: String? = result["category"] as? String
+            var project_name: String? = result["project_name"] as? String
+            var description: String? = result["description"] as? String
+            var web_site: String? = result["web_site"] as? String
+            var promo_url: String? = result["promo_url"] as? String
+            var qrcode_url: String? = result["qrcode_url"] as? String
+            var project_short_summary: String? = result["project_short_summary"] as? String
+            var location: String? = result["location"] as? String
+            var organization: String? = result["organization"] as? String
+            var photo_link: String? = result["photo_link"] as? String
+            
+            var newMaker = Maker(category: category, project_name: project_name, description: description, web_site: web_site, promo_url: promo_url, qrcode_url: qrcode_url, project_short_summary: project_short_summary, location: location, organization: organization, photo_link: photo_link)
+            
+            println(newMaker)
+            self.makers.append(newMaker)
+        }
+        */
     }
     
     
