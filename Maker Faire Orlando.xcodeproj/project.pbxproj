@@ -14,6 +14,8 @@
 		110345BC1945759200F5C99F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110345BB1945759200F5C99F /* Images.xcassets */; };
 		110345C81945759200F5C99F /* Orlando_Maker_FaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110345C71945759200F5C99F /* Orlando_Maker_FaireTests.swift */; };
 		113C561F1946A4AC00CAFC27 /* MakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C561E1946A4AC00CAFC27 /* MakerViewController.swift */; };
+		1154A6A91948019F004E8CD0 /* MakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154A6A81948019F004E8CD0 /* MakerDetailViewController.swift */; };
+		1154A6AB19480266004E8CD0 /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154A6AA19480266004E8CD0 /* Maker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		110345C61945759200F5C99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110345C71945759200F5C99F /* Orlando_Maker_FaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orlando_Maker_FaireTests.swift; sourceTree = "<group>"; };
 		113C561E1946A4AC00CAFC27 /* MakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerViewController.swift; sourceTree = "<group>"; };
+		1154A6A81948019F004E8CD0 /* MakerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerDetailViewController.swift; sourceTree = "<group>"; };
+		1154A6AA19480266004E8CD0 /* Maker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,12 @@
 		110345AF1945759200F5C99F /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
+				1154A6AC1948026D004E8CD0 /* Model */,
 				110345B21945759200F5C99F /* AppDelegate.swift */,
 				110345B41945759200F5C99F /* MapViewController.swift */,
 				110345B61945759200F5C99F /* EventViewController.swift */,
 				113C561E1946A4AC00CAFC27 /* MakerViewController.swift */,
+				1154A6A81948019F004E8CD0 /* MakerDetailViewController.swift */,
 				110345B81945759200F5C99F /* Main.storyboard */,
 				110345BB1945759200F5C99F /* Images.xcassets */,
 				110345B01945759200F5C99F /* Supporting Files */,
@@ -114,6 +120,14 @@
 				110345C61945759200F5C99F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1154A6AC1948026D004E8CD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1154A6AA19480266004E8CD0 /* Maker.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,8 @@
 			files = (
 				110345B71945759200F5C99F /* EventViewController.swift in Sources */,
 				110345B31945759200F5C99F /* AppDelegate.swift in Sources */,
+				1154A6AB19480266004E8CD0 /* Maker.swift in Sources */,
+				1154A6A91948019F004E8CD0 /* MakerDetailViewController.swift in Sources */,
 				110345B51945759200F5C99F /* MapViewController.swift in Sources */,
 				113C561F1946A4AC00CAFC27 /* MakerViewController.swift in Sources */,
 			);
