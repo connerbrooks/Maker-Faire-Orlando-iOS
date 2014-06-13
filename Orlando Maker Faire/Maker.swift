@@ -12,7 +12,7 @@ class Maker {
     
     var category:String?
     var project_name:String?
-    var description:String?
+    var maker_description:String?
     var web_site:String?
     var promo_url:String?
     var qrcode_url:String?
@@ -30,5 +30,13 @@ class Maker {
         self.location = location
         self.organization = organization
         self.photo_link = photo_link
+    }
+    
+    init(project_name:String!, maker_description:String!, web_site:String!, organization:String!, project_short_summary:String!) {
+        self.project_name = project_name
+        self.maker_description = maker_description
+        self.web_site = web_site
+        self.organization = organization
+        self.project_short_summary = project_short_summary
     }
 }
