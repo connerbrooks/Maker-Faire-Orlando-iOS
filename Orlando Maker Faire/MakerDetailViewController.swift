@@ -24,8 +24,6 @@ class MakerDetailViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController.title = "whattheheh"
         
         makerTitle.text = self.maker?.project_name
         makerDescription.text = self.maker?.maker_description

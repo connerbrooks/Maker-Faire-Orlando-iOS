@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MakerAPIProtocol {
+class MakerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MakerAPIProtocol, UISearchBarDelegate {
 
     let kCellIdentifier: String = "MakerCell"
     
@@ -16,12 +16,15 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var makerTableView : UITableView
     
-    var makers: Maker[] = []
+    var makers: [Maker] = []
+    
+    var searchResults: [Maker] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.api = MakerAPI(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.api!.getMakers()
     }
     
@@ -38,8 +41,9 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
     
+        
         let maker = self.makers[indexPath.row]
-        cell.text = maker.project_name
+        cell.textLabel.text = maker.project_name
         cell.detailTextLabel.text = maker.organization
         
         return cell
@@ -55,9 +59,8 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didRecieveAPIResults(results: NSDictionary) {
         
-        let allResults: NSDictionary[] = results["accepteds"] as NSDictionary[]
-        
-        print(allResults)
+        let allResults: [NSDictionary] = results["accepteds"] as [NSDictionary]
+    
         for result:NSDictionary in allResults {
             var project_name: String? = result["project_name"] as? String
             var maker_description: String? = result["description"] as? String
@@ -73,7 +76,6 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             var newMaker = Maker(project_name: project_name, maker_description: maker_description, web_site: web_site, organization: organization, project_short_summary: project_short_summary)
             
-            println(newMaker)
             self.makers.append(newMaker)
         }
         
