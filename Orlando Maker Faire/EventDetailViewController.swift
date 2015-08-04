@@ -11,11 +11,11 @@ import UIKit
 
 class EventDetailViewController : UIViewController {
 
-    @IBOutlet var eventTitle: UILabel
+    @IBOutlet var eventTitle: UILabel!
     
     var event : Event?
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

@@ -11,14 +11,14 @@ import UIKit
 
 class MakerDetailViewController : UIViewController {
     
-    @IBOutlet var makerTitle : UILabel
-    @IBOutlet var makerWebSite : UILabel
-    @IBOutlet var makerOranization : UILabel
-    @IBOutlet var makerDescription : UITextView
+    @IBOutlet var makerTitle : UILabel!
+    @IBOutlet var makerWebSite : UILabel!
+    @IBOutlet var makerOranization : UILabel!
+    @IBOutlet var makerDescription : UITextView!
     
     var maker:Maker?
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

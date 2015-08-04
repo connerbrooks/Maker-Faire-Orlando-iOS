@@ -10,7 +10,7 @@ import UIKit
 
 class MapViewController: UIViewController {
                             
-    @IBOutlet var mapView : UIImageView
+    @IBOutlet var mapView : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

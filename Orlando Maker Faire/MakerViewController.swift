@@ -14,7 +14,7 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var api: MakerAPI?
     
-    @IBOutlet var makerTableView : UITableView
+    @IBOutlet var makerTableView : UITableView!
     
     var makers: [Maker] = []
     
@@ -39,19 +39,19 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
     
         
         let maker = self.makers[indexPath.row]
-        cell.textLabel.text = maker.project_name
-        cell.detailTextLabel.text = maker.organization
+        cell.textLabel!.text = maker.project_name
+        cell.detailTextLabel!.text = maker.organization
         
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var detailViewController: MakerDetailViewController = segue.destinationViewController as MakerDetailViewController
-        var makerIndex = makerTableView.indexPathForSelectedRow().row
+        var detailViewController: MakerDetailViewController = segue.destinationViewController as! MakerDetailViewController
+        var makerIndex = makerTableView.indexPathForSelectedRow()!.row
         var selectedMaker = self.makers[makerIndex]
         detailViewController.maker = selectedMaker
         
@@ -59,7 +59,7 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didRecieveAPIResults(results: NSDictionary) {
         
-        let allResults: [NSDictionary] = results["accepteds"] as [NSDictionary]
+        let allResults: [NSDictionary] = results["accepteds"] as! [NSDictionary]
     
         for result:NSDictionary in allResults {
             var project_name: String? = result["project_name"] as? String

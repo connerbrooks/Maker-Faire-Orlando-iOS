@@ -14,7 +14,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var api: EventAPI?
     
-    @IBOutlet var eventTableView : UITableView
+    @IBOutlet var eventTableView : UITableView!
     
     
     var events: [Event] = []
@@ -38,25 +38,25 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
         
         let event = self.events[indexPath.row]
-        cell.textLabel.text = event.summary
-        cell.detailTextLabel.text = event.location
+        cell.textLabel!.text = event.summary
+        cell.detailTextLabel!.text = event.location
         
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var detailViewController: EventDetailViewController = segue.destinationViewController as EventDetailViewController
-        var eventIndex = eventTableView.indexPathForSelectedRow().row
+        var detailViewController: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
+        var eventIndex = eventTableView.indexPathForSelectedRow()!.row
         var selectedEvent = self.events[eventIndex]
         detailViewController.event = selectedEvent
         
     }
     
     func didRecieveAPIResults(results: NSDictionary) {
-        let allResults: [NSDictionary] = results["items"] as [NSDictionary]
+        let allResults: [NSDictionary] = results["items"] as! [NSDictionary]
         for result:NSDictionary in allResults {
             
             var location: String? = result["location"] as? String
@@ -67,16 +67,16 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             var formatter: NSDateFormatter = NSDateFormatter()
             formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'-'HH':'mm'"
-            var startDict : NSDictionary = result["start"] as NSDictionary
-            var endDict : NSDictionary = result["end"] as NSDictionary
+            var startDict : NSDictionary = result["start"] as! NSDictionary
+            var endDict : NSDictionary = result["end"] as! NSDictionary
             
-            var startString : String = startDict["dateTime"] as String
-            var endString : String = endDict["dateTime"] as String
+            var startString : String = startDict["dateTime"] as! String
+            var endString : String = endDict["dateTime"] as! String
             
             println(startString)
             
-            var start: NSDate = formatter.dateFromString(startString) as NSDate
-            var end: NSDate = formatter.dateFromString(endString)
+            var start: NSDate = formatter.dateFromString(startString)!
+            var end: NSDate = formatter.dateFromString(endString)!
             println(start)
             
             
