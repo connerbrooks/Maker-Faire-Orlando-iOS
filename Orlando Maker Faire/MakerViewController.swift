@@ -33,11 +33,11 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return makers.count
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
     
@@ -49,7 +49,7 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var detailViewController: MakerDetailViewController = segue.destinationViewController as! MakerDetailViewController
         var makerIndex = makerTableView.indexPathForSelectedRow()!.row
         var selectedMaker = self.makers[makerIndex]
@@ -57,7 +57,7 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func didRecieveAPIResults(results: NSDictionary) {
+    func didReceiveAPIResults(results: NSDictionary) {
         
         let allResults: [NSDictionary] = results["accepteds"] as! [NSDictionary]
     

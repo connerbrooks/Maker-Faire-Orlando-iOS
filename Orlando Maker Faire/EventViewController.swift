@@ -32,11 +32,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
         
@@ -47,7 +47,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var detailViewController: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
         var eventIndex = eventTableView.indexPathForSelectedRow()!.row
         var selectedEvent = self.events[eventIndex]
@@ -55,7 +55,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func didRecieveAPIResults(results: NSDictionary) {
+    func didReceiveAPIResults(results: NSDictionary) {
         let allResults: [NSDictionary] = results["items"] as! [NSDictionary]
         for result:NSDictionary in allResults {
             

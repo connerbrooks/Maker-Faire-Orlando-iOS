@@ -9,7 +9,7 @@
 import Foundation
 
 protocol EventAPIProtocol {
-    func didRecieveAPIResults(results: NSDictionary)
+    func didReceiveAPIResults(results: NSDictionary)
 }
 
 class EventAPI {
@@ -44,7 +44,7 @@ class EventAPI {
                 }
                 else {
                     println("Results recieved")
-                    self.delegate?.didRecieveAPIResults(jsonResult)
+                    self.delegate?.didReceiveAPIResults(jsonResult)
                 }
             }
             })

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MakerAPIProtocol {
-    func didRecieveAPIResults(results: NSDictionary)
+    func didReceiveAPIResults(results: NSDictionary)
 }
 
 class MakerAPI {
@@ -38,7 +38,7 @@ class MakerAPI {
                 }
                 else {
                     println("Results recieved")
-                    self.delegate?.didRecieveAPIResults(jsonResult)
+                    self.delegate?.didReceiveAPIResults(jsonResult)
                 }
             }
         })
