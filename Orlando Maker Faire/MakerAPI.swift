@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MakerAPIProtocol {
-    func didReceiveAPIResults(results: NSDictionary)
+    func didReceiveAPIResults(results: [String : [[String : AnyObject]]])
 }
 
 class MakerAPI {
@@ -31,14 +31,16 @@ class MakerAPI {
             }
             else {
                 var error: NSError?
-                let jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+                let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as? [String : [[String : AnyObject]]]
                 // Now send the JSON result to our delegate object
                 if (error != nil) {
                     println("HTTP Error: \(error?.localizedDescription)")
                 }
                 else {
-                    println("Results recieved")
-                    self.delegate?.didReceiveAPIResults(jsonResult)
+                    if let result = jsonResult {
+                        println("Results received")
+                        self.delegate?.didReceiveAPIResults(result)
+                    }
                 }
             }
         })

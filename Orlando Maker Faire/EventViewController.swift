@@ -55,23 +55,23 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func didReceiveAPIResults(results: NSDictionary) {
-        let allResults: [NSDictionary] = results["items"] as! [NSDictionary]
-        for result:NSDictionary in allResults {
+    func didReceiveAPIResults(results: [String : [[String : AnyObject]]]) {
+        let allResults: [[String : AnyObject]] = results["items"]!
+        for result in allResults {
             
-            var location: String? = result["location"] as? String
-            var link: String? = result["htmllink"] as? String
-            var event_description: String? = result["description"] as? String
-            var summary: String? = result["summary"] as? String
+            var location = result["location"] as! String
+            var link = result["htmllink"] as! String
+            var event_description = result["description"] as! String
+            var summary = result["summary"] as! String
             
             
             var formatter: NSDateFormatter = NSDateFormatter()
             formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'-'HH':'mm'"
-            var startDict : NSDictionary = result["start"] as! NSDictionary
-            var endDict : NSDictionary = result["end"] as! NSDictionary
+            var startDict = result["start"] as! [String : String]
+            var endDict = result["end"] as! [String : String]
             
-            var startString : String = startDict["dateTime"] as! String
-            var endString : String = endDict["dateTime"] as! String
+            var startString = startDict["dateTime"] as String!
+            var endString = endDict["dateTime"] as String!
             
             println(startString)
             
@@ -88,7 +88,5 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.eventTableView.reloadData()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
-
-
 }
 

@@ -57,16 +57,16 @@ class MakerViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func didReceiveAPIResults(results: NSDictionary) {
+    func didReceiveAPIResults(results: [String : [[String : AnyObject]]]) {
         
-        let allResults: [NSDictionary] = results["accepteds"] as! [NSDictionary]
+        let allResults: [[String : AnyObject]] = results["accepteds"]!
     
-        for result:NSDictionary in allResults {
-            var project_name: String? = result["project_name"] as? String
-            var maker_description: String? = result["description"] as? String
-            var web_site: String? = result["web_site"] as? String
-            var organization: String? = result["organization"] as? String
-            var project_short_summary: String? = result["project_short_summary"] as? String
+        for result in allResults {
+            var project_name = result["project_name"] as! String
+            var maker_description = result["description"] as! String
+            var web_site = result["web_site"] as! String
+            var organization = result["organization"] as! String
+            var project_short_summary = result["project_short_summary"] as! String
             
             //var promo_url: String? = result["promo_url"] as? String
             //var qrcode_url: String? = result["qrcode_url"] as? String
