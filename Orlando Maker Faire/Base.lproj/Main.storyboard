@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--Event View Controller-->
         <scene sceneID="UWF-sq-yjt">
             <objects>
                 <tableViewController storyboardIdentifier="EventViewController" id="wn6-X6-HWv" customClass="EventViewController" customModule="Maker_Faire_Orlando" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,8 +42,19 @@
                             <outlet property="delegate" destination="wn6-X6-HWv" id="BqL-V4-2GU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="n9O-iw-zGw"/>
+                    <navigationItem key="navigationItem" prompt="Events" id="n9O-iw-zGw">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Cl6-g1-aG3">
+                            <rect key="frame" x="180" y="37" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="September 12"/>
+                                <segment title="September 13"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
+                        <outlet property="daySegmentedControl" destination="Cl6-g1-aG3" id="ZKd-lQ-a4j"/>
                         <outlet property="eventTableView" destination="wXc-Vs-gIq" id="fxm-6b-UWf"/>
                     </connections>
                 </tableViewController>
